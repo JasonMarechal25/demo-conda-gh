@@ -1,6 +1,5 @@
 name: action
 dependencies:
-  dependencies:
   - pip
   - pip:
       - -r requirements.txt
