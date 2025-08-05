@@ -1,3 +1,3 @@
 name: action
 dependencies:
-  - pyinstaller
+  - pyinstaller=4.5.1
