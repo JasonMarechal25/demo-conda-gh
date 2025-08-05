@@ -1,0 +1,30 @@
+name: Action
+
+on:
+  push:
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup Python environment using conda
+        uses: conda-incubator/setup-miniconda@v3.2.0
+        with:
+          channels: "https://repo.anaconda.com/pkgs/main/linux-64/"
+          conda-remove-defaults: "https://repo.anaconda.com/pkgs/main,https://repo.anaconda.com/pkgs/r"
+          auto-update-conda: false
+          activate-environment: action
+          environment-file: environment.yml
+          use-only-tar-bz2: true
+          channel-priority: flexible
+
+      - run: |
+        conda info
