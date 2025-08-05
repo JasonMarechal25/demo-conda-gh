@@ -27,4 +27,4 @@ jobs:
           channel-priority: flexible
 
       - run: |
-        conda info
+          conda info
