@@ -18,13 +18,11 @@ jobs:
       - name: Setup Python environment using conda
         uses: conda-incubator/setup-miniconda@v3.2.0
         with:
-          channels: "https://repo.anaconda.com/pkgs/main/linux-64/"
-          conda-remove-defaults: "true"
           auto-update-conda: false
           activate-environment: action
           environment-file: environment.yml
           use-only-tar-bz2: true
-          channel-priority: flexible
+          channel-priority: strict
 
       - run: |
           conda info
