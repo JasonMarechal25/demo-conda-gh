@@ -1,4 +1,4 @@
-name: action
+name: action-test
 dependencies:
   - python=3.10
   - pip
