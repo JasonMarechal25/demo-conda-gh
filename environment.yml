@@ -1,3 +1,6 @@
 name: action
 dependencies:
-  - pyinstaller=4.5.1
+  dependencies:
+  - pip
+  - pip:
+      - -r requirements.txt
